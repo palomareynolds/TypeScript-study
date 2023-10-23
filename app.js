@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () =>  {
     var cardsChosen = [];
     var cardsChosenId = [];
     var cardsWon = [];
+    var score = 0
+    var chances;
 
 
     
@@ -87,18 +89,23 @@ document.addEventListener('DOMContentLoaded', () =>  {
             cards[optionTwoId].setAttribute('src', 'images/white.png')
             cardsWon.push(cardsChosen)
         } else {
+            chances++;
             cards[optionOneId].setAttribute('src', 'images/blank.png')
             cards[optionTwoId].setAttribute('src', 'images/blank.png')
             alert("Sorry, try again")
         }
         cardsChosen = [];
         cardsChosenId = [];
-        resultDisplay.textContent = cardsChosen.length;
+        resultDisplay.textContent = cardsWon.length;
         if (cardsWon.length === cardArray.length/2) {
-            resultDisplay.textContent = 'Congratulations! You found them all!'
-        }
-
+            resultDisplay.textContent = ' Congratulations! You found them all!'
+        }    
     }
+
+    
+    
+
+
 
     //flip your card
 
@@ -110,16 +117,16 @@ document.addEventListener('DOMContentLoaded', () =>  {
         if (cardsChosen.length === 2) {
             setTimeout(checkForMatch, 500)
         }
-
     }
-    console.log(cardArray)
-    console.log('cardsChosen', cardsChosen, 'ID', cardsChosenId, 'won', cardsWon)
-
-
+    
 
 
 
     createBoard()
+    console.log(cardArray)
+    console.log(cardsChosen, 'chosen')
+    console.log(cardsWon, 'won')
+
 
 
 
