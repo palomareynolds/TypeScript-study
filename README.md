@@ -1,1 +1,1 @@
-# MemoryGame
+Starting my journey learning TypeScript today (May 30th 2024)
